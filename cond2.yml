@@ -1,0 +1,10 @@
+---
+- hosts: demo
+  become: yes
+  vars:
+     epic : false      
+  tasks:
+   - command: echo " this is  epic!" 
+     when: epic
+   - command: echo " this is not epic "
+     when: not epic   

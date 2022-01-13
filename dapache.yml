@@ -1,0 +1,6 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+          - name: deleting apche2
+            apt: name=apache2 state=absent

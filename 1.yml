@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  become: yes
+  vars:
+    - mypkg: apahce2
+  tasks:
+     - name: install git
+       apt: name=git state=present
+     - name: install apahce
+       apt: name=apache2 state=present
+     - name: start apahce
+       service: name=apache2 state=started

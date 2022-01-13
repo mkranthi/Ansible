@@ -1,0 +1,11 @@
+--- 
+- hosts: all
+  become: yes
+  tasks:
+          - name: printing shell environment variable
+            debug:
+                    msg: "{{local_home: lookup('env','HOME','SHELL')}}"
+                   
+
+
+

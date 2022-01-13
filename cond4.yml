@@ -1,0 +1,10 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+     - name : install apache2
+       apt: name=apache2 state=present
+       when: ansible_os_family == "Debian" or ansible_os_family ==  "fedora"
+     - name: install httpd
+       yum: name=httpd state=presnet
+       when: ansible_os_family == "REDHAT"  and ansible_pkg_mgr == "yum"

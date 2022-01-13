@@ -1,0 +1,6 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+    - name: sample
+      shell: echo samle

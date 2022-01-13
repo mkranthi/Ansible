@@ -1,0 +1,12 @@
+---
+# by default  run once is  false if don't mention run_once 
+ - hosts: all
+   become: yes
+   tasks:
+    - name: print name
+      command: echo hi kranthi
+      delegate_to: node1
+      run_once: true
+    - name: print end of tak
+      command: echo eot
+
