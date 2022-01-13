@@ -1,0 +1,11 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+     - name: wait for  service to start listening on port 80
+       wait_for:
+         port: 80
+         state: started
+     - name: eot
+       command: echo "end of task"
+

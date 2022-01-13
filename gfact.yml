@@ -1,0 +1,23 @@
+---
+# this file is example of  local variable key word is {{vars}} 
+# we are not  definig any variable we are getting info from out put to see check last task this file is all about last task
+# {{ local variable}}
+- hosts: demo
+  become: yes
+  vars:
+    - mypkg: apache2
+  tasks:
+     - name: install git
+       apt: name=git state=present
+     - name: install apahce
+       apt: name={{mypkg}} state=present
+     - name: start apahce
+       service: name={{mypkg}} state=started
+     - name: print my name
+       command: echo hi kranthi
+       register: output
+     - debug: var=output.stdout
+     - name: print memory used
+       command: echo '{{ansible_memfree_mb}}'
+       register: output
+     - debug: var=output.stdout

@@ -1,0 +1,11 @@
+---
+- hosts: demo
+  become_method: su 
+  become_user: root
+  tasks: 
+      - name: install apache in ubuntu 
+        apt: name=apache2 state=present
+
+
+
+

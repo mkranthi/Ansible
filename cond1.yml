@@ -1,0 +1,14 @@
+---
+- hosts: demo
+  become: yes
+  tasks:
+     - name : install apache2
+       apt: name=apache2 state=present
+       when: ansible_os_family == "Debian"
+     - name: install httpd
+       yum: name=httpd state=presnet
+       when: ansible_os_family == "REDHAT"
+     - name: printu numbers
+       command: echo {{ item }}
+       with_items: [0,2,4,6,8,10 ] 
+       when: item > 5 

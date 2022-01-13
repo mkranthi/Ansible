@@ -1,0 +1,17 @@
+---
+# this file is example of  local variable key word is {{vars}}
+- hosts: demo
+  become: yes
+  vars:
+    - mypkg: apache2
+  tasks:
+     - name: install git
+       apt: name=git state=present
+     - name: install apahce
+       apt: name={{mypkg}} state=present
+     - name: start apahce
+       service: name={{mypkg}} state=started
+     - name: print my name
+       command: echo hi kranthi
+       register: output
+     - debug: var=output 

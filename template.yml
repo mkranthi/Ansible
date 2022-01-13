@@ -1,0 +1,11 @@
+---
+- hosts: demo
+  vars:
+   mylist: [ 'Kranthi' , 'm' , 'devops' ]
+  tasks:
+          - name: Ansible template example
+            template:
+                    src: test.j2
+                    dest: /tmp/testfile
+
+   

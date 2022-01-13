@@ -1,0 +1,10 @@
+---
+# this file is example of  local variable key word is {{vars}}
+- hosts: local
+  become: yes
+  tasks:
+     - name: print name 
+       command: echo '{{myname}}'
+       register: output
+     - debug: var=output.stdout
+

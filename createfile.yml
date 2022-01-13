@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+          - name: creating a empty file
+            file:
+              path: "/tmp/ansfile.txt"
+              state: touch 

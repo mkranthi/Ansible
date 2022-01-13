@@ -1,0 +1,4 @@
+#importing a playbook into another play book using options called " import"
+--- 
+- import_playbook: sample.yml
+  when: env == 'development'

@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+     - name: printing all environment variable
+       debug:
+               msg: "{{ansible_env}}"

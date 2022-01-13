@@ -1,0 +1,7 @@
+--- 
+- hosts: demo
+  become: yes
+  tasks:
+          - include: inc.yml
+          - name: verify the httpd is instaled are not
+            shell: apt list --installed| grep apache > /tmp/result.log

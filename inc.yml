@@ -1,0 +1,6 @@
+#---
+#- hosts : demo
+# become: yes
+# tasks:
+- name: install apache2
+  apt: pkg=apache2 state=latest       

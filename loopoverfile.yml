@@ -1,0 +1,10 @@
+# looping over files
+---
+ - hosts: demo
+   become: yes
+   tasks:
+    - debug: 
+       msg: '{{item}}'
+      with_file:
+         - testfile 
+     

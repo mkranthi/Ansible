@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+          - name: print name
+            #command: echo hi_ kranthi
+            command: echo '{{ ansible_swapfree_mb }}'
+            register: output
+          - name: storing output in variable
+            #debug: var=output
+            debug: var=output.stdout
+            #debug: var=output
+
+
